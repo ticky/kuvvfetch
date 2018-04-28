@@ -4,7 +4,7 @@ Fetch wallpapers from your Kuvva favourites, now that the apps are dead
 
 ## What?
 
-[Kuvva](https://kuvva.com) is a now-on-indefinite-hiatus site which used to
+[Kuvva](https://www.kuvva.com) is a now-on-indefinite-hiatus site which used to
 provide a large library of wallpapers commissioned from artists. The collection
 updated frequently. iOS and Mac apps which would sync your set of favourite
 wallpapers, and, in the case of the Mac OS app, rotate them on a schedule were
