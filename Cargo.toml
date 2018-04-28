@@ -1,0 +1,10 @@
+[package]
+name = "kuvvfetch"
+version = "0.1.0"
+authors = ["Jessica Stokes <hello@jessicastokes.net>"]
+
+[dependencies]
+clap = "2.31.2"
+regex = "0.2"
+reqwest = "0.8.5"
+scraper = "0.6.0"
