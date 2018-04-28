@@ -4,6 +4,8 @@ extern crate regex;
 extern crate reqwest;
 extern crate scraper;
 
+const KUVVA_SHARE_URL_PREFIX: &'static str = "https://www.kuvva.com/s/";
+
 fn main() {
     use clap::Arg;
 
@@ -16,7 +18,7 @@ fn main() {
         )
         .arg(
             Arg::with_name("share-url")
-                .help("Your personal Kuvva share URL. Must begin with \"https://www.kuvva.com/s/\"")
+                .help(&format!("Your personal Kuvva share URL. Must begin with \"{}\"", KUVVA_SHARE_URL_PREFIX))
                 .index(1)
                 .takes_value(true)
                 .required(true),
@@ -55,6 +57,10 @@ fn main() {
 
     // Get the share URL from the arguments
     let share_url = arguments.value_of("share-url").unwrap();
+    if !share_url.starts_with(KUVVA_SHARE_URL_PREFIX) {
+        println!("Specified Kuvva share URL doesn't look valid!");
+        std::process::exit(1);
+    }
 
     // Check the specified resolution seems valid
     let resolution = arguments.value_of("resolution").unwrap();
